@@ -15,7 +15,7 @@ export default function Address() {
 
    async function checkOut() {
     setIsLodaing(true) ;
-    const baseUrl = window.location.origin;
+    const baseUrl = process.env.REACT_APP_API_URL || window.location.origin;
       const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/` + cartId ,{
         
           shippingAddress: values
